@@ -1,33 +1,33 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
 
-	<groupId>jp.xcoo.casmi</groupId>
-	<artifactId>cytobandview</artifactId>
-	<version>0.1.0-SNAPSHOT</version>
-	<packaging>jar</packaging>
+    <groupId>jp.xcoo.casmi</groupId>
+    <artifactId>cytobandview</artifactId>
+    <version>0.1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
 
-	<name>cytoband view</name>
-	<url>http://casmi.github.io/gallery/cytobandview.html</url>
+    <name>cytoband view</name>
+    <url>http://casmi.github.io/gallery/cytobandview.html</url>
 
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-	</properties>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
 
-	<dependencies>
-		<dependency>
-			<groupId>com.github.casmi</groupId>
-			<artifactId>casmi</artifactId>
-			<version>0.4.0</version>
-		</dependency>
-		<dependency>
-			<groupId>com.github.casmi</groupId>
-			<artifactId>casmi-io</artifactId>
-			<version>0.1.0</version>
-		</dependency>
-	</dependencies>
+    <dependencies>
+        <dependency>
+            <groupId>com.github.casmi</groupId>
+            <artifactId>casmi</artifactId>
+            <version>0.4.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.casmi</groupId>
+            <artifactId>casmi-io</artifactId>
+            <version>0.1.0</version>
+        </dependency>
+    </dependencies>
 
-	<build>
+    <build>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -40,11 +40,27 @@
             </plugin>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
-	            <artifactId>exec-maven-plugin</artifactId>
-	            <version>1.2.1</version>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.2.1</version>
                 <configuration>
-				  <mainClass>jp.xcoo.casmi.cytobandview.view.CytobandView</mainClass>
-				</configuration>
+                  <mainClass>jp.xcoo.casmi.cytobandview.view.CytobandView</mainClass>
+                </configuration>
+            </plugin>
+            <plugin>
+              <groupId>io.github.appbundler</groupId>
+              <artifactId>appbundle-maven-plugin</artifactId>
+              <version>1.0-SNAPSHOT</version>
+              <configuration>
+                <mainClass>jp.xcoo.casmi.cytobandview.view.CytobandView</mainClass>
+              </configuration>
+              <executions>
+                <execution>
+                  <phase>package</phase>
+                  <goals>
+                    <goal>bundle</goal>
+                  </goals>
+                </execution>
+              </executions>
             </plugin>
         </plugins>
     </build>
