@@ -52,6 +52,7 @@
               <version>1.0-SNAPSHOT</version>
               <configuration>
                 <mainClass>jp.xcoo.casmi.cytobandview.view.CytobandView</mainClass>
+                <dictionaryFile>Info.plist</dictionaryFile>
                 <iconFile>icon.icns</iconFile>
                 <jvmVersion>1.7+</jvmVersion>
               </configuration>
