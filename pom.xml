@@ -49,7 +49,7 @@
             <plugin>
               <groupId>sh.tak.appbundler</groupId>
               <artifactId>appbundle-maven-plugin</artifactId>
-              <version>1.0.2</version>
+              <version>1.0.4</version>
               <configuration>
                 <bundleName>Cytoband View</bundleName>
                 <mainClass>jp.xcoo.casmi.cytobandview.view.CytobandView</mainClass>
